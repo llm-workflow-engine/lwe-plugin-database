@@ -1,5 +1,6 @@
 from langchain.agents import create_sql_agent
 from langchain.agents.agent_toolkits import SQLDatabaseToolkit
+from langchain.agents.agent_types import AgentType
 from langchain.sql_database import SQLDatabase
 
 from lwe.core.plugin import Plugin
@@ -37,11 +38,16 @@ class Database(Plugin):
         # TODO: Connection testsing
         self.connection_string = connection_string or self.default_database
         self.database = SQLDatabase.from_uri(self.connection_string)
-        toolkit = SQLDatabaseToolkit(db=self.database)
+        llm = self.make_llm()
+        toolkit = SQLDatabaseToolkit(
+            llm=llm,
+            db=self.database,
+        )
         self.agent = create_sql_agent(
-            llm=self.make_llm(),
+            llm=llm,
             toolkit=toolkit,
-            verbose=self.agent_verbose
+            verbose=self.agent_verbose,
+            agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
         )
 
     def disconnect(self):
