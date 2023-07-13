@@ -2,7 +2,9 @@
 
 Database plugin for [LLM Workflow Engine](https://github.com/llm-workflow-engine/llm-workflow-engine)
 
-Send natural language commands to a database **WARNING: POTENTIALLY DANGEROUS -- DATA INTEGRITY CANNOT BE GUARANTEED.**
+Send natural language commands to a database
+
+**WARNING: POTENTIALLY DANGEROUS -- DATA INTEGRITY CANNOT BE GUARANTEED.**
 
 ## Installation
 
