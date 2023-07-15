@@ -7,6 +7,9 @@ from lwe.core.plugin import Plugin
 import lwe.core.util as util
 
 class Database(Plugin):
+    """
+    Send natural language commands to a database
+    """
 
     def incompatible_backends(self):
         return [
