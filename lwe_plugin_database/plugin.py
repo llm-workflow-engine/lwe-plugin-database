@@ -11,11 +11,6 @@ class Database(Plugin):
     Send natural language commands to a database
     """
 
-    def incompatible_backends(self):
-        return [
-            'browser',
-        ]
-
     def default_config(self):
         return {
             'database': {
