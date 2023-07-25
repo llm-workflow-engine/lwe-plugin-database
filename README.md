@@ -27,7 +27,7 @@ git clone https://github.com/llm-workflow-engine/lwe-plugin-database.git
 Install the development package:
 
 ```bash
-cd llm-workflow-engine
+cd lwe-plugin-database
 pip install -e .
 ```
 
